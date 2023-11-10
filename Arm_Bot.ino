@@ -16,8 +16,9 @@ unsigned long previous = 0;
 unsigned long interval = 100;
 
 // Used to keep track of each servo.
-// Index 0 == Base
-// Index 1 = 
+// 0 == Base
+// 1 = Write
+// 2 = Gripper
 int current_positions[] = { 0, 0, 0 };
 
 void setup() {
