@@ -24,7 +24,7 @@ unsigned long servo_current = 0;
 unsigned long servo_previous = 0;
 long servo_interval = 25;
 
-void setup_servos() {
+void servos_init() {
 
   base.attach(base_pin);
   wrist.attach(wrist_pin);
@@ -37,7 +37,7 @@ void setup_servos() {
   delay(20);
 }
 
-void servos_run() {
+void servos_update() {
   servo_current = millis();
 }
 

@@ -23,21 +23,25 @@ int current_positions[] = { 0, 0, 0 };
 
 void setup() {
 
-  // Start monitor to read various info
+  // Start serial monitor
   Serial.begin(9600);
 
   // Initialize all 3 servos
-  setup_servos();
+  servos_init();
 }
 
 void loop() {
 
-  // Use a timer instead of delay since delay functions are blocking.
+  // Use a timer instead of delay since delays are blocking.
   current = millis();
 
   if (current - previous > interval) {
 
-    servos_run();
+    // After every interval,
+    // 
+
+    servos_update();
+
     update_controls();
 
     controls_map_values(current_positions);
